@@ -4,7 +4,31 @@ A comprehensive collection of C++ programs covering fundamental programming conc
 
 ## 📁 Project Structure
 
-### 1. Functions (`Functions/`)
+### 1. Arrays (`arrays/`)
+Basic array operations and manipulations:
+
+- **main.cpp** - Main array operations demonstration program.
+
+- **sizeofarray.cpp** - Demonstrates how to calculate array size using the `sizeof` operator in C++.
+
+- **smallestnum.cpp** - Finds and displays the smallest number in an array using iteration.
+
+### 2. Arrays Advanced (`arrays1/`)
+Advanced array manipulation and algorithm problems:
+
+- **fibbonaci.cpp** - Generates Fibonacci sequence up to the nth number. Uses an array to store Fibonacci numbers where each number is the sum of the two preceding ones (F(n) = F(n-1) + F(n-2)). Outputs the nth Fibonacci number.
+
+- **missingno.cpp** - Finds the missing number in an array of size n-1 containing numbers from 1 to n. Uses the mathematical formula: missing = n*(n+1)/2 - sum_of_array to efficiently find the missing element.
+
+- **reversearray.cpp** - Reverses an array in-place using two pointers (start and end). Swaps elements from both ends moving towards the center until pointers meet.
+
+- **search.cpp** - Searches for a specific element in an array and returns its index. Uses linear search to iterate through the array and breaks when the element is found. Returns -1 if not found.
+
+- **secmax.cpp** - Finds the second maximum element in an array. First finds the maximum element, then iterates again to find the largest element that is not the maximum.
+
+- **rotate.cpp** - Array rotation program (under development).
+
+### 3. Functions (`Functions/`)
 Programs demonstrating function concepts and parameter passing mechanisms:
 
 - **sum.cpp** - Simple addition function that takes two integers and returns their sum. Demonstrates basic function definition and return values.
@@ -96,8 +120,12 @@ g++ -o program program.cpp
 - C++11 or higher
 
 ## 📚 Learning Objectives
+- Master fundamental array operations (creation, search, reversal, sorting)
+- Understand and implement classic array algorithms (Fibonacci, missing number, second maximum)
 - Master C++ operators (comparison, logical, increment/decrement)
 - Understand loop control structures (while, do-while, for)
+- Develop pattern printing skills using nested loops
+- Learn function design and parameter passing mechanisms (pass-by-value vs pass-by-reference)
 - Practice nested loops for pattern generation
 - Develop problem-solving skills with algorithmic thinking
 
