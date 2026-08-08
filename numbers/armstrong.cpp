@@ -1,4 +1,5 @@
-# include<iostream>
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -6,17 +7,26 @@ int main()
     int n;
     cin >> n;
 
-    int sum = 0;
     int temp = n;
+    int digits = 0;
 
-    while(temp > 0)
+    while (temp > 0)
     {
-        int digit = temp % 10;
-        sum += digit * digit * digit;
+        digits++;
         temp /= 10;
     }
 
-    if(sum == n)
+    temp = n;
+    int sum = 0;
+
+    while (temp > 0)
+    {
+        int digit = temp % 10;
+        sum += pow(digit, digits);
+        temp /= 10;
+    }
+
+    if (sum == n)
         cout << "Armstrong Number";
     else
         cout << "Not Armstrong Number";

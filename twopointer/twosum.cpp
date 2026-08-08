@@ -1,42 +1,51 @@
 #include <iostream>
-#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
-int main() {
+int main()
+{
     int n;
-    cout << "Enter the size of the array: ";
     cin >> n;
 
     int arr[n];
-    cout << "Enter the elements of the array: ";
-    for (int i = 0; i < n; i++) {
+
+    // Input array
+    for(int i = 0; i < n; i++)
+    {
         cin >> arr[i];
     }
 
-     int target;
-    cout << "Enter target: ";
+    int target;
     cin >> target;
 
-    // Sort the array
-    sort(arr, arr + n);
-    // Two pointers
+    unordered_map<int,int> mp;
 
-    int left = 0, right = n - 1;
-    bool found = false;
+    for(int i = 0; i < n; i++)
+    {
+        // Number needed to make the target
+        int remaining = target - arr[i];
 
-    while (left < right) {
-        int sum = arr[left] + arr[right];
-        if (sum == target) {
-            cout << "Pair found: " << arr[left] << " + " << arr[right] << " = " << target << endl;
-            found = true;
-            
-        } else if (sum < target) {
-            left++;
-        } else {
-            right--;
+        // Check if remaining number already exists
+        if(mp.find(remaining) != mp.end())
+        {
+            cout << "Indices : "
+                 << mp[remaining]
+                 << " "
+                 << i << endl;
+
+            cout << "Elements : "
+                 << remaining
+                 << " "
+                 << arr[i];
+
+            return 0;
         }
+
+        // Store current element with its index
+        mp[arr[i]] = i;
     }
-    if (!found) {
-        cout << "No pair found with the given sum." << endl;
-    }
+
+    cout << "No Pair Found";
+
+    return 0;
 }
